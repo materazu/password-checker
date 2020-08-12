@@ -15,7 +15,7 @@ export class AuthenticatedUserGuard implements CanActivate {
     private readonly router: Router,
   ) {}
 
-  canActivate() {
+  canActivate(): boolean {
     const authKey = localStorage.getItem('hashKey');
 
     const canActivate = this.loginManager.checkAuthentication(authKey);

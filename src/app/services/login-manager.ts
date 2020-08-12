@@ -19,7 +19,7 @@ export class LoginManager {
   /**
    * Check a login
    */
-  checkLogin(usernameTyped: string, passwordTyped: string) {
+  checkLogin(usernameTyped: string, passwordTyped: string): boolean {
     const { username, password } = environment.user;
     const usernameMatched = bcrypt.compareSync(usernameTyped, username);
     const passwordMatched = bcrypt.compareSync(passwordTyped, password);
@@ -31,19 +31,21 @@ export class LoginManager {
     }
 
     this.loginEvent.next(checked);
+
+    return checked;
   }
 
   /**
    * Check the auth of user
    */
-  checkAuthentication(authKey: string) {
+  checkAuthentication(authKey: string): boolean {
     return authKey === environment.authBearer;
   }
 
   /**
    * Logout action emit event
    */
-  logout() {
+  logout(): void {
     localStorage.removeItem('authKey');
     this.logoutEvent.next();
   }

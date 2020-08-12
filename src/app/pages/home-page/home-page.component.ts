@@ -15,7 +15,7 @@ export class HomePageComponent {
   /**
    * Logout from app
    */
-  logout() {
+  logout(): void {
     this.loginManager.logout();
   }
 }

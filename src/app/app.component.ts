@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     private readonly router: Router,
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loginManager.logoutEvent.subscribe(_ => {
       this.router.navigate(['/']);
     });

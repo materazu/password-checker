@@ -7,20 +7,23 @@ import { Router } from '@angular/router';
 
 import { LoginManager } from '../../services/login-manager';
 
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
-  private loginEventSubscribor;
+  /** Subscription for login event */
+  private loginEventSubscribor: Subscription;
 
   constructor(
     private readonly loginManager: LoginManager,
     private readonly router: Router,
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loginEventSubscribor = this.loginManager
       .loginEvent
       .subscribe(userIsAuthorized => {
@@ -31,7 +34,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     ;
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.loginEventSubscribor.unsubscribe();
   }
 }

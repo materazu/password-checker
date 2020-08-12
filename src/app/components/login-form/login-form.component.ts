@@ -25,6 +25,9 @@ export class LoginFormComponent implements OnInit {
   /** Step for the password number on select */
   step: number;
 
+  /** Status of authentication for animate */
+  loginFailed: boolean;
+
   constructor(
     private readonly loginManager: LoginManager,
   ) {}
@@ -64,6 +67,15 @@ export class LoginFormComponent implements OnInit {
   login(): void {
     const password = this.password.join('');
 
-    this.loginManager.checkLogin(this.username, password);
+    const logged = this.loginManager.checkLogin(this.username, password);
+
+    if (!logged) {
+      this.loginFailed = true;
+
+      setTimeout(_ => {
+        this.loginFailed = false;
+        this.clearPassword();
+      }, 500);
+    }
   }
 }

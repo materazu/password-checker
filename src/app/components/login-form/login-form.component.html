@@ -14,7 +14,10 @@
       >
     </mat-form-field>
 
-    <div class="password-container">
+    <div
+      class="password-container"
+      [ngClass]="{shake: loginFailed}"
+    >
       <button
       mat-mini-fab
       disabled
@@ -37,7 +40,9 @@
 
   <mat-card-actions>
     <button
+      class="clear"
       mat-raised-button color="secondary"
+      [ngClass]="{hidden: step < 1}"
       (click)="clearPassword()"
     >
       Clear password
