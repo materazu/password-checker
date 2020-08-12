@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { HomePageComponent } from './home-page.component';
 
-describe('LoginPageComponent', () => {
+describe('HomePageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -18,7 +18,7 @@ describe('LoginPageComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the login page component', () => {
+  it('should create the home page component', () => {
     const fixture = TestBed.createComponent(HomePageComponent);
     const app = fixture.componentInstance;
 

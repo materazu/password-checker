@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { LoginFormComponent } from './login-form.component';
 
-describe('LoginPageComponent', () => {
+describe('LoginFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
