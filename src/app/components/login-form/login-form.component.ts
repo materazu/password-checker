@@ -1,5 +1,9 @@
-import { LoginChecker } from './../../services/login-checker';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+} from '@angular/core';
+
+import { LoginManager } from '../../services/login-manager';
 
 import { shuffledNumbers } from './../../../environments/global-config/shuffled-numbers';
 
@@ -22,20 +26,20 @@ export class LoginFormComponent implements OnInit {
   step: number;
 
   constructor(
-    private readonly loginChecker: LoginChecker,
+    private readonly loginManager: LoginManager,
   ) {}
 
   /**
    * Init the component
    */
-  ngOnInit() {
+  ngOnInit(): void {
     this.clearPassword();
   }
 
   /**
    * Reset the password field
    */
-  clearPassword() {
+  clearPassword(): void {
     this.step = 0;
     this.password = ['', '', '', '', '', ''];
   }
@@ -57,10 +61,9 @@ export class LoginFormComponent implements OnInit {
   /**
    * Check account through LoginChecker and try to connect user
    */
-  login() {
+  login(): void {
     const password = this.password.join('');
-    const userMatched = this.loginChecker.checkLogin(this.username, password);
 
-    console.log(userMatched);
+    this.loginManager.checkLogin(this.username, password);
   }
 }

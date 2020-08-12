@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 /** Page components */
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 /** Components */
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 
 @NgModule({
   declarations: [
+    HomePageComponent,
     LoginPageComponent,
     AppComponent,
     LoginFormComponent,

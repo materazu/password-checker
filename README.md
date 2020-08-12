@@ -11,7 +11,7 @@ The aim of this project is to demonstrate a login system with a pad and random n
 
 ### Angular
   * @angular/material for design
-  * bcrypt (and crypto) for password hashing
+  * bcrypt and cryptoJs for password hashing and bearer
 
 ## Install
 At root, use `npm i`.
