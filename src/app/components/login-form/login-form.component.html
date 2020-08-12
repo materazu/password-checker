@@ -1,0 +1,53 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login to proceed</mat-card-title>
+    <mat-card-subtitle>Enter username and select each numbers of your password</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Your username</mat-label>
+      <input
+        type="text"
+        matInput
+        [(ngModel)]="username"
+      >
+    </mat-form-field>
+
+    <div class="password-container">
+      <button
+      mat-mini-fab
+      disabled
+      *ngFor="let number of password"
+    >
+      {{ number ? '*' : '' }}
+    </button>
+    </div>
+
+    <div class="numbers-container">
+      <button
+        mat-fab
+        *ngFor="let number of shuffledNumbers"
+        (click)="addNumberToPassword(number)"
+      >
+        {{ number }}
+      </button>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button color="secondary"
+      (click)="clearPassword()"
+    >
+      Clear password
+    </button>
+    <button
+      mat-raised-button color="primary"
+      [disabled]="!username || step < 6"
+      (click)="login()"
+    >
+      Login me please
+    </button>
+  </mat-card-actions>
+</mat-card>

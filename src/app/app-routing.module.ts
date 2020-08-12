@@ -4,7 +4,14 @@ import {
   Routes,
 } from '@angular/router';
 
-const routes: Routes = [];
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: LoginPageComponent
+  }
+];
 
 @NgModule({
   imports: [

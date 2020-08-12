@@ -10,10 +10,14 @@ The aim of this project is to demonstrate a login system with a pad and random n
   * standard-version
 
 ### Angular
-  * @angular/material
+  * @angular/material for design
+  * bcrypt (and crypto) for password hashing
 
 ## Install
 At root, use `npm i`.
 
 ## Start project for dec
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+
+## Connect to app
+For login test, you need to use username `neilnilom@gmail.com` with password `578390`.
