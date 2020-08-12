@@ -1,3 +1,6 @@
+import { globalConfig } from './global-config';
+
 export const environment = {
-  production: false
+  production: false,
+  ...globalConfig
 };
