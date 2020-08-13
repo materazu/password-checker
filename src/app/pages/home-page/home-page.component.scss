@@ -1,12 +1,12 @@
 :host {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-flow: column;
-  width: 100%;
-  height: 100%;
   background: black;
   color: #dedede;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
 
   img {
     margin-bottom: 100px;

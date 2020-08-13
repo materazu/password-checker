@@ -19,10 +19,10 @@
       [ngClass]="{shake: loginFailed}"
     >
       <button
-      mat-mini-fab
-      disabled
-      *ngFor="let number of password"
-    >
+        disabled
+        mat-mini-fab
+        *ngFor="let number of password"
+      >
       {{ number ? '*' : '' }}
     </button>
     </div>
